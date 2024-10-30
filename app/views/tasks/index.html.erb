@@ -1,0 +1,26 @@
+<div class="card-container">
+  <% @tasks.each do |task| %>
+    <% if task.task_type == "todo" %>
+      <div>
+        <h1>Todo</h1>
+        <ul>
+          <%= link_to task.name, task%>
+        </ul>
+      </div>
+      <% elsif task.task_type == "doing" %>
+      <h1>Doing</h1>
+      <div>
+        <ul>
+          <%= link_to task.name, task%>
+        </ul>
+      </div>
+    <% else %>
+      <div>
+        <h1>Done</h1>
+        <ul>
+          <%= link_to task.name, task%>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>
