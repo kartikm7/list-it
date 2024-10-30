@@ -20,6 +20,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id])
+    if @task.destroy
+      flash[:success] = "Object was successfully deleted."
+      redirect_to "/tasks"
+    else
+      flash[:error] = "Something went wrong"
+      redirect_to "/tasks"
+    end
+  end
+
   private
   def task_params
     params.require(:task).permit(:name, :desc, :task_type)
