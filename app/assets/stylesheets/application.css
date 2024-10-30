@@ -242,12 +242,32 @@ input[type="radio"]:checked::before {
   background-color: #fff8e1; /* Light Amber Background */
 }
 
+@media (prefers-color-scheme: dark) {
+  .primary {
+    color: #66b2ff; /* Lighter Blue for contrast */
+    background-color: #003a66; /* Dark Blue Background */
+  }
+
+  .secondary {
+    color: #b0b3b8; /* Lighter Grey Text */
+    background-color: #3a3a3a; /* Dark Grey Background */
+  }
+
+  .warning {
+    color: #ffd54f; /* Lighter Amber for text */
+    background-color: #665500; /* Dark Amber Background */
+  }
+}
+
 /* Delete/Destructive Colors */
 .delete {
   color: #dc3545; /* Red - Delete */
   background-color: #fdecea; /* Light Red Background */
 }
 
+.landing-text{
+  font-size: 5rem;
+}
 
 
 /* 
