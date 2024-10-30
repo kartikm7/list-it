@@ -1,5 +1,5 @@
 <div>
-  <h1>Add a Task</h1>
+  <h1>Update the task</h1>
   <hr>
   <%= form_with model: @task do |form| %>
     <div>
@@ -7,7 +7,7 @@
       <%= form.text_field :name %>
     </div>
     <div>
-      <%= form.label :desc, "Description" %>
+      <%= form.label :desc %>
       <%= form.text_area :desc %>
     </div>
     <div>
@@ -20,7 +20,7 @@
     </div>
     <div class="show-buttons">
       <%= link_to "Back", "/tasks" , :class => "button"%>
-      <%= form.submit "Add task", :class=>"button primary"%>
+      <%= form.submit "Update task", :class=>"button warning"%>
     </div>
   <% end %>
 </div>

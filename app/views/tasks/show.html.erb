@@ -7,7 +7,7 @@
     <div class="show-buttons">
       <%= link_to "Back", "/tasks", :class => "button"%>
       <div class="flex-row">
-        <%= link_to "Update", "/tasks", :class => "button warning"%>
+        <%= link_to "Update", edit_task_path(@task), :class => "button warning"%>
         <%= link_to "Destroy", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "button delete"%>
       </div>
     </div>
