@@ -1,0 +1,25 @@
+<div>
+  <h1>Add a Task</h1>
+  <%= form_with model: @task do |form| %>
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+    <div>
+      <%= form.label :desc %>
+      <%= form.text_area :desc %>
+    </div>
+    <div>
+      <%= form.label :task_type, "Todo" %>
+      <%= form.radio_button :task_type, "todo" %>
+      <%= form.label :task_type, "Doing" %>
+      <%= form.radio_button :task_type, "doing" %>
+      <%= form.label :task_type, "Done" %>
+      <%= form.radio_button :task_type, "done" %>
+    </div>
+    <div class="show-buttons">
+      <%= link_to "Back", "/tasks" , :class => "button"%>
+      <%= form.submit "Add task", :class=>"button primary"%>
+    </div>
+  <% end %>
+</div>

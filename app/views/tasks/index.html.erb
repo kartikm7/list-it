@@ -1,32 +1,48 @@
 <div class="card-container">
-  <% @tasks.each do |task| %>
-    <% if task.task_type == "todo" %>
-      <div class="card">
-        <h1>Todo</h1>
-        <ul>
+  <div class="card">
+    <div class="card-header">
+      <h1>Todo</h1>
+      <hr>
+    </div>
+    <ul>
+      <% @tasks.each do |task| %>
+        <% if task.task_type == "todo" %>
           <li>
             <%= link_to task.name, task%>
           </li>
-        </ul>
-      </div>
-    <% elsif task.task_type == "doing" %>
-      <div class="card">
-        <h1>Doing</h1>
-        <ul>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h1>Doing</h1>
+      <hr>
+    </div>
+    <ul>
+      <% @tasks.each do |task| %>
+        <% if task.task_type == "doing" %>
           <li>
             <%= link_to task.name, task%>
           </li>
-        </ul>
-      </div>
-    <% else %>
-      <div class="card">
-        <h1>Done</h1>
-        <ul>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h1>Done</h1>
+      <hr>
+    </div>
+    <ul>
+      <% @tasks.each do |task| %>
+        <% if task.task_type == "done" %>
           <li>
             <%= link_to task.name, task%>
           </li>
-        </ul>
-      </div>
-    <% end %>
-  <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
 </div>
+<%= link_to "[List It]", "/tasks/new", :class => "button primary" %>

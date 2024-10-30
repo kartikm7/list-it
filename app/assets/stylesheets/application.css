@@ -9,6 +9,20 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+/* 
+
+ ▄███████▄    ▄████████  ▄█    ▄▄▄▄███▄▄▄▄    ▄█      ███      ▄█   ▄█    █▄     ▄████████         ▄████████     ███     ▄██   ▄    ▄█          ▄████████    ▄████████ 
+ ███    ███   ███    ███ ███  ▄██▀▀▀███▀▀▀██▄ ███  ▀█████████▄ ███  ███    ███   ███    ███        ███    ███ ▀█████████▄ ███   ██▄ ███         ███    ███   ███    ███ 
+ ███    ███   ███    ███ ███▌ ███   ███   ███ ███▌    ▀███▀▀██ ███▌ ███    ███   ███    █▀         ███    █▀     ▀███▀▀██ ███▄▄▄███ ███         ███    █▀    ███    █▀  
+ ███    ███  ▄███▄▄▄▄██▀ ███▌ ███   ███   ███ ███▌     ███   ▀ ███▌ ███    ███  ▄███▄▄▄            ███            ███   ▀ ▀▀▀▀▀▀███ ███        ▄███▄▄▄       ███        
+▀█████████▀  ▀▀███▀▀▀▀▀   ███▌ ███   ███   ███ ███▌     ███     ███▌ ███    ███ ▀▀███▀▀▀          ▀███████████     ███     ▄██   ███ ███       ▀▀███▀▀▀     ▀███████████ 
+ ███        ▀███████████ ███  ███   ███   ███ ███      ███     ███  ███    ███   ███    █▄                ███     ███     ███   ███ ███         ███    █▄           ███ 
+ ███          ███    ███ ███  ███   ███   ███ ███      ███     ███  ███    ███   ███    ███         ▄█    ███     ███     ███   ███ ███▌    ▄   ███    ███    ▄█    ███ 
+▄████▀        ███    ███ █▀    ▀█   ███   █▀  █▀      ▄████▀   █▀    ▀██████▀    ██████████       ▄████████▀     ▄████▀    ▀█████▀  █████▄▄██   ██████████  ▄████████▀  
+              ███    ███                                                                                                            ▀                                   
+ */
+
+
 * {
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -18,6 +32,9 @@
 body {
   height: 100vh;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 h1{
@@ -40,6 +57,88 @@ body {
   align-items: center;
 }
 
+
+/* Text Input */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: 2px solid hsla(0, 0%, 0%, 0.25);
+  border-radius: 8px;
+  padding: 5%;
+  width: 100%; /* Make the input fill the width of the container */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  background-color: white;
+  transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: hsla(0, 0%, 0%, 0.5); /* Darker border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Textarea */
+textarea {
+  border: 2px solid hsla(0, 0%, 0%, 0.25);
+  border-radius: 8px;
+  padding: 5%;
+  width: 100%; /* Make the textarea fill the width of the container */
+  box-sizing: border-box; /* Ensure padding is included in the total width */
+  background-color: white;
+  resize: vertical; /* Allow vertical resizing only */
+  transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+textarea:focus {
+  border-color: hsla(0, 0%, 0%, 0.5); /* Darker border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+  appearance: none; /* Remove default styling */
+  width: 16px; /* Set custom width */
+  height: 16px; /* Set custom height */
+  border: 2px solid hsla(0, 0%, 0%, 0.25); /* Custom border */
+  border-radius: 50%; /* Make it round */
+  outline: none; /* Remove outline */
+  position: relative; /* Positioning context for pseudo-elements */
+  margin-right: 8px; /* Space between radio and label */
+  cursor: pointer; /* Pointer on hover */
+}
+
+input[type="radio"]:checked {
+  background-color: white; /* Ensure background is white when checked */
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  display: block;
+  width: 10px; /* Inner circle size */
+  height: 10px; /* Inner circle size */
+  border-radius: 50%; /* Make it round */
+  background-color: hsla(0, 0%, 0%, 0.5); /* Inner circle color */
+  position: absolute;
+  top: 50%; /* Center it vertically */
+  left: 50%; /* Center it horizontally */
+  transform: translate(-50%, -50%); /* Centering */
+}
+
+/* 
+
+▄████████ ███    █▄     ▄████████     ███      ▄██████▄    ▄▄▄▄███▄▄▄▄           ▄████████     ███     ▄██   ▄    ▄█          ▄████████    ▄████████ 
+███    ███ ███    ███   ███    ███ ▀█████████▄ ███    ███ ▄██▀▀▀███▀▀▀██▄        ███    ███ ▀█████████▄ ███   ██▄ ███         ███    ███   ███    ███ 
+███    █▀  ███    ███   ███    █▀     ▀███▀▀██ ███    ███ ███   ███   ███        ███    █▀     ▀███▀▀██ ███▄▄▄███ ███         ███    █▀    ███    █▀  
+███        ███    ███   ███            ███   ▀ ███    ███ ███   ███   ███        ███            ███   ▀ ▀▀▀▀▀▀███ ███        ▄███▄▄▄       ███        
+███        ███    ███ ▀███████████     ███     ███    ███ ███   ███   ███      ▀███████████     ███     ▄██   ███ ███       ▀▀███▀▀▀     ▀███████████ 
+███    █▄  ███    ███          ███     ███     ███    ███ ███   ███   ███               ███     ███     ███   ███ ███         ███    █▄           ███ 
+███    ███ ███    ███    ▄█    ███     ███     ███    ███ ███   ███   ███         ▄█    ███     ███     ███   ███ ███▌    ▄   ███    ███    ▄█    ███ 
+████████▀  ████████▀   ▄████████▀     ▄████▀    ▀██████▀   ▀█   ███   █▀        ▄████████▀     ▄████▀    ▀█████▀  █████▄▄██   ██████████  ▄████████▀  
+                                                                                                                  ▀                                   
+ */
+
+
 .bg-img {
   position: fixed;
   top: 0;
@@ -56,6 +155,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .card-container {
@@ -66,13 +166,20 @@ body {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
   border: 2px solid hsla(0, 0%, 0%, 0.25);
   border-radius: 8px;
-  padding: 10% 5%;
+  padding: 5%;
   background-color: white;
+  height: 500px;
+  width: 400px;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.card-header{
+  margin-bottom: 1.5  rem;
 }
 
 .card ul {
@@ -104,9 +211,14 @@ body {
 }
 
 .button {
+  outline: none;
   background: white;
+  border: none;
+  outline: inherit;
+  cursor: pointer;
   border-radius: 8px;
-  padding: 2% 4%
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
 }
 
 .button:hover {
@@ -137,7 +249,18 @@ body {
 }
 
 
-/* util classes */
+
+/* 
+███    █▄      ███      ▄█   ▄█               ▄████████     ███     ▄██   ▄    ▄█          ▄████████    ▄████████ 
+███    ███ ▀█████████▄ ███  ███              ███    ███ ▀█████████▄ ███   ██▄ ███         ███    ███   ███    ███ 
+███    ███    ▀███▀▀██ ███▌ ███              ███    █▀     ▀███▀▀██ ███▄▄▄███ ███         ███    █▀    ███    █▀  
+███    ███     ███   ▀ ███▌ ███              ███            ███   ▀ ▀▀▀▀▀▀███ ███        ▄███▄▄▄       ███        
+███    ███     ███     ███▌ ███            ▀███████████     ███     ▄██   ███ ███       ▀▀███▀▀▀     ▀███████████ 
+███    ███     ███     ███  ███                     ███     ███     ███   ███ ███         ███    █▄           ███ 
+███    ███     ███     ███  ███▌    ▄         ▄█    ███     ███     ███   ███ ███▌    ▄   ███    ███    ▄█    ███ 
+████████▀     ▄████▀   █▀   █████▄▄██       ▄████████▀     ▄████▀    ▀█████▀  █████▄▄██   ██████████  ▄████████▀  
+                            ▀                                                 ▀                                    */
+
 .flex-row{
   display: flex;
   justify-content: center;
