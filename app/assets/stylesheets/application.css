@@ -9,13 +9,35 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+* {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  box-sizing: border-box; /* Includes padding and border within width */
+}
+
 body {
   height: 100vh;
   width: 100%;
 }
 
-.container{
+h1{
+  margin: 0;
+}
+
+a {
+  text-decoration: none; /* Removes underline */
+  color: inherit; /* Uses the color of the parent element */
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bg-img {
@@ -29,9 +51,96 @@ body {
   overflow: hidden;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10%;
+  gap: 5%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid hsla(0, 0%, 0%, 0.25);
+  border-radius: 8px;
+  padding: 10% 5%;
+  background-color: white;
+}
+
+.card ul {
+  list-style-type: none; /* Removes bullet points */
+  padding: 0; /* Removes padding from the ul */
+  margin: 0; /* Removes margin from the ul */
+}
+
+.card ul li {
+  margin: 0; /* Removes any margin from the li elements */
+  width: 100%;
+  border: 2px solid hsla(0, 0%, 0%, 0.25);
+  width: fit-content;
+  border-radius: 8px;
+  padding: 5%;
+}
+
+.breadcrumb{
+  background: white;
+  border-radius: 8px;
+  width: fit-content;
+  font-size: small;
+  padding: 0 2%;
+}
+
+.show-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background: white;
+  border-radius: 8px;
+  padding: 2% 4%
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+/* Primary Colors */
+.primary {
+  color: #007bff; /* Blue - Primary */
+  background-color: #e0f3ff; /* Light Blue Background */
+}
+
+.secondary {
+  color: #6c757d; /* Grey - Secondary */
+  background-color: #f2f2f2; /* Light Grey Background */
+}
+
+/* Warning Colors */
+.warning {
+  color: #ffc107; /* Amber - Warning */
+  background-color: #fff8e1; /* Light Amber Background */
+}
+
+/* Delete/Destructive Colors */
+.delete {
+  color: #dc3545; /* Red - Delete */
+  background-color: #fdecea; /* Light Red Background */
+}
+
+
+/* util classes */
+.flex-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
 }

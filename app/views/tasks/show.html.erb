@@ -1,3 +1,15 @@
-<h1><%= @task.name %></h1>
-<p><%= @task.desc %></p>
-<p><%= @task.task_type %></p>
+<div class="container">
+  <div>
+    <h1><%= @task.name %></h1>
+    <p class="breadcrumb">Current status : <%= @task.task_type %></p>
+    <hr class="solid">
+    <p><%= @task.desc %></p>
+    <div class="show-buttons">
+      <%= link_to "Back", "/tasks"%>
+      <div class="flex-row">
+        <%= link_to "Update", "/tasks", :class => "button warning"%>
+        <%= link_to "Delete", "/tasks", :class => "button delete"%>
+      </div>
+    </div>
+  </div>
+</div>
