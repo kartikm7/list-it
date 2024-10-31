@@ -1,5 +1,5 @@
 # List[it]
-> List[it] is just fancy name for a Todo app
+> List[it] is just a fancy name for a Todo app
 
 This is just me documenting me learning Ruby and Ruby on Rails. One of my seniors (shoutout Avyay) told me a while back that a Todo app is the best way to learn a new framework and I've really come to believing in that.
 
